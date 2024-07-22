@@ -1,2 +1,1 @@
-# capstone
-capstone project
+# SomeSampleRepo

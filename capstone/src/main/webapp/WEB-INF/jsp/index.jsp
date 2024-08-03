@@ -20,43 +20,7 @@
 
 </head>
 <body>
-<!-- Navbar-->
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
-    <div class="container">
-        <a href="#" class="navbar-brand">Online Tutors</a>
-
-        <button
-                class="navbar-toggler"
-                type = "button"
-                data-bs-toggle = "collapse"
-                data-bs-target="#navmenu"
-        >
-            <span class="navbar-toggler-icon"></span>
-
-        </button>
-
-        <div class="collapse navbar-collapse" id="navmenu">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a  class="nav-link" href="/search">Search</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#learn" class="nav-link">What you'll learn</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#questions" class="nav-link">Questions</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#instructors" class="nav-link">Instructors</a>
-                </li>
-
-
-            </ul>
-        </div>
-
-    </div>
-
-</nav>
+<jsp:include page="include/header.jsp" />
 
 <!-- Showcase-->
 <section class="bg-dark text-light p-5 pt-lg-3 p-lg-0 text-center text-sm-start">
@@ -423,16 +387,9 @@
     </div>
 </section>
 
-<!--Footer-->
-<footer class="p-5 bg-dark text-white text-center position-relative">
-    <div class="container">
-        <p class="lead">Copyright &copy; 2024 All rights reserved</p>
-        <a href="#" class="position-absolute buttom-0 end-0 p-5">
-            <i class="bi bi-arrow-up-circle h1"></i>
-        </a>
-    </div>
 
-</footer>
+
+<jsp:include page="include/footer.jsp" />
 
 <!-- Modal -->
 <div class="modal fade" id="enroll" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">

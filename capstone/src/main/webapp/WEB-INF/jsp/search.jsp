@@ -1,0 +1,1 @@
+<h1 class="page-title">This is my search page</h1>

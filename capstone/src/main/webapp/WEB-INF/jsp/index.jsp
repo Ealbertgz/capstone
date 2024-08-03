@@ -38,6 +38,9 @@
         <div class="collapse navbar-collapse" id="navmenu">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
+                    <a  class="nav-link" href="/search">Search</a>
+                </li>
+                <li class="nav-item">
                     <a href="#learn" class="nav-link">What you'll learn</a>
                 </li>
                 <li class="nav-item">
@@ -46,6 +49,7 @@
                 <li class="nav-item">
                     <a href="#instructors" class="nav-link">Instructors</a>
                 </li>
+
 
             </ul>
         </div>

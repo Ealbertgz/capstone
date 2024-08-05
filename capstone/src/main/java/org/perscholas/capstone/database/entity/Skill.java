@@ -22,6 +22,8 @@ public class Skill {
     private Integer skillId;
     @Column(name = "tutor_id")
     private Integer tutorId;
+    @Column(name ="tutor_skills")
+    private String skillName;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(

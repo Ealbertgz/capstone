@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.*;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.perscholas.capstone.database.dao.TutorDAO.*;
 
@@ -57,18 +59,25 @@ public class IndexController {
     }
 
     @GetMapping("/skill-search")
-    public ModelAndView skillSearch(@RequestParam(required = false) String skill, @RequestParam(required = false) String tutorCode) {
-        log.debug("Searching for skill: {}", skill);
-        ModelAndView response = new ModelAndView("skill-search"); // Adjust the view name as necessary
+    public ModelAndView skillSearch(@RequestParam(required = false) String search) {
+        log.debug("Searching for skill: {}", search);
+        ModelAndView response = new ModelAndView("skill-search");
 
-        log.debug("The user searched for the skill: " + skill);
+        log.debug("The user searched for the skill: " + search);
 
-        response.addObject("skill", skill);
+        response.addObject("search", search);
 
-        // Now that tutorCode is a method parameter, it can be used in the query
-        List<Skill> skills = skillDao.findSkillsByTutorCode(tutorCode);
-        log.debug("Found {} skills", skills.size());
-        response.addObject("skills", skills);
+        // Rechercher les compétences correspondant au terme de recherche
+        List<Skill> skills = skillDao.findBySkillNameContainingIgnoreCase(search);
+
+        // Récupérer les tuteurs ayant ces compétences
+        Set<Tutor> tutors = new HashSet<>();
+        for (Skill skill : skills) {
+            tutors.addAll(skill.getTutors());
+        }
+
+        log.debug("Found {} tutors", tutors.size());
+        response.addObject("tutors", tutors);
 
         return response;
     }

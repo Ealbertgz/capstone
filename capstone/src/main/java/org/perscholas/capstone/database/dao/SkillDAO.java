@@ -16,5 +16,6 @@ public interface SkillDAO extends JpaRepository<Skill, Long> {
     // Note: This is a simplified example. You might need to adjust the query based on your actual database schema and relationships.
     @Query(value = "SELECT DISTINCT s.* FROM skills s INNER JOIN tutors_skills ts ON s.skill_id = ts.skill_id INNER JOIN case_study.tutors t ON ts.tutor_id = t.id WHERE t.tutor_code = :tutorCode", nativeQuery = true)
     List<Skill> findSkillsByTutorCode(@Param("tutorCode") String tutorCode);
+    List<Skill> findBySkillNameContainingIgnoreCase(@Param("skillName") String skillName);
 
 }

@@ -65,10 +65,11 @@
                                     <tbody>
                                     <c:forEach items="${tutor.skills}" var="skill">
                                         <tr>
-                                            <td>${skill.tutorSkills}</td>
+                                            <td>${skill.tutor_skills}</td> <!-- Adjusted property name -->
                                         </tr>
                                     </c:forEach>
                                     </tbody>
+
                                 </table>
                             </td>
                         </tr>

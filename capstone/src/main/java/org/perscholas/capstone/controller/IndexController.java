@@ -2,7 +2,9 @@ package org.perscholas.capstone.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.perscholas.capstone.database.dao.EmployeeDAO;
+import org.perscholas.capstone.database.dao.SkillDAO;
 import org.perscholas.capstone.database.dao.TutorDAO;
+import org.perscholas.capstone.database.entity.Skill;
 import org.perscholas.capstone.database.entity.Tutor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,9 @@ public class IndexController {
 
     @Autowired
     private TutorDAO tutorDao;
+
+    @Autowired
+    private SkillDAO skillDao; // Autowire your SkillDAO
 
 
 
@@ -50,4 +55,23 @@ public class IndexController {
 
         return response;
     }
+
+    @GetMapping("/skill-search")
+    public ModelAndView skillSearch(@RequestParam(required = false) String skill, @RequestParam(required = false) String tutorCode) {
+        log.debug("Searching for skill: {}", skill);
+        ModelAndView response = new ModelAndView("skill-search"); // Adjust the view name as necessary
+
+        log.debug("The user searched for the skill: " + skill);
+
+        response.addObject("skill", skill);
+
+        // Now that tutorCode is a method parameter, it can be used in the query
+        List<Skill> skills = skillDao.findSkillsByTutorCode(tutorCode);
+        log.debug("Found {} skills", skills.size());
+        response.addObject("skills", skills);
+
+        return response;
+    }
+
+
 }

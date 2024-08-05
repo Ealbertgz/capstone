@@ -20,6 +20,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navmenu">
             <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/skill-search">Skill Search</a></li>
                 <li class="nav-item"><a class="nav-link" href="/search">Search</a></li>
                 <li class="nav-item"><a href="#learn" class="nav-link">What you'll learn</a></li>
                 <li class="nav-item"><a href="#questions" class="nav-link">Questions</a></li>

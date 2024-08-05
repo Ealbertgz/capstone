@@ -2,28 +2,23 @@
 
 <jsp:include page="include/header.jsp" />
 
-<%--<h1 class="page-title">This is my search page</h1>--%>
-
-<%--<br>--%>
-<!-- a page header -->
+<!-- Page Header -->
 <section class="bg-dark text-light p-5 pt-lg-3 p-lg-0 text-center text-sm-start">
     <div class="container">
         <div class="row pt-1 pb-1">
-            <h1 class="text-center text-white">Search <span class="text-warning">Page</span></h1>
+            <h1 class="text-center text-white">Skill Search <span class="text-warning">Page</span></h1>
         </div>
     </div>
 </section>
 
-
-
-<!-- a search form -->
+<!-- Search Form -->
 <section>
     <div class="container">
-        <div class="row justify-content-center pt-5 pb-3">
+        <div class="row justify-content-center pt-5 pb-3"> <!-- Corrected class attribute -->
             <div class="col-8 text-center">
-                <form action="/search">
+                <form action="/skill-search">
                     <div class="mb-3">
-                        <label for="search" class="form-label"><h4>Tutor Search</h4></label>
+                        <label for="search" class="form-label"><h4>Skill Search</h4></label>
                         <input type="text" value="${search}" class="form-control" id="search" name="search" placeholder="Enter search term"/>
                     </div>
                     <button type="submit" class="btn btn-primary">Search</button>
@@ -34,7 +29,7 @@
 </section>
 
 
-
+<!-- Display Tutors and Their Skills -->
 <section>
     <div class="container">
         <div class="row pt-5">
@@ -51,8 +46,7 @@
                         <th>Name</th>
                         <th>Description</th>
                         <th>Cost</th>
-<%--                        <th>Skills</th>--%>
-                        <th>Edit</th>
+                        <th>Skills</th>
                     </tr>
                     <c:forEach items="${tutors}" var="tutor">
                         <tr>
@@ -61,8 +55,22 @@
                             <td>${tutor.tutorName}</td>
                             <td>${tutor.tutorDescription}</td>
                             <td>${tutor.tutorCost}</td>
-<%--                            <td>${tutor.tutorSkills}</td>--%>
-                            <td><a href="/?id=${tutor.id}">Edit</a></td>
+                            <td>
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>Skill</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach items="${tutor.skills}" var="skill">
+                                        <tr>
+                                            <td>${skill.tutorSkills}</td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
+                            </td>
                         </tr>
                     </c:forEach>
                 </table>
@@ -70,7 +78,5 @@
         </div>
     </div>
 </section>
-
-
 
 <jsp:include page="include/footer.jsp" />

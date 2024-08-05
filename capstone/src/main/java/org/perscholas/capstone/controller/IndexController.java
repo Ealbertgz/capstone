@@ -33,6 +33,7 @@ public class IndexController {
 
     @GetMapping("/search")
     public ModelAndView search(@RequestParam(required = false) String search) {
+        log.debug("Search term: {}", search);
         // this page is for another page of the website which is express as "/page-url"
         ModelAndView response = new ModelAndView("search");
 
@@ -44,6 +45,7 @@ public class IndexController {
 
 
         List<Tutor> tutors = tutorDao.findByNameOrCode(search);
+        log.debug("Found {} tutors", tutors.size());
         response.addObject("tutors", tutors);
 
         return response;

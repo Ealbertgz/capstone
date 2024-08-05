@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="pub/css/style.css">
     <title>Online Tutors</title>
+    <script src="/pub/js/nav.js"></script> <!-- Include the external JavaScript file -->
 </head>
 <body>
 <!-- Navbar-->
@@ -27,3 +28,6 @@
         </div>
     </div>
 </nav>
+<!-- Rest of your HTML content -->
+</body>
+</html>

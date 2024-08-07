@@ -29,7 +29,11 @@ public class IndexController {
     @Autowired
     private SkillDAO skillDao; // Autowire your SkillDAO
 
-
+    @GetMapping("/index")
+    public ModelAndView indexPage() {
+        ModelAndView response = new ModelAndView("index");
+        return response;
+    }
 
     @GetMapping("/")
     public ModelAndView index(){

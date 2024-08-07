@@ -1,12 +1,91 @@
-body::before {
-    display:block;
-    content: '';
-    height: 60px;
-
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
 }
 
-@media (min-width: 768px) {
-    .news-input {
-        width: 50%;
-    }
+.navbar-brand {
+    font-weight: bold;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+.card {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+}
+
+.card-subtitle {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.list-group-item {
+    padding: 10px 15px;
+    margin-bottom: 5px;
+}
+
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+.bg-dark {
+    background-color: #343a40 !important;
+}
+
+.bg-primary {
+    background-color: #007bff !important;
+}
+
+.bg-secondary {
+    background-color: #6c757d !important;
+}
+
+.text-light {
+    color: #f8f9fa !important;
+}
+
+.text-dark {
+    color: #343a40 !important;
+}
+
+.text-white {
+    color: #ffffff !important;
+}
+
+.text-warning {
+    color: #ffc107 !important;
+}
+
+.py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+.mt-3 {
+    margin-top: 1rem !important;
 }

@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
-import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -28,9 +28,16 @@ public class TutorService {
         tutor.setTutorDescription(form.getTutorDescription());
         tutor.setTutorCost(form.getTutorCost());
 
-        // Retrieve skills associated with the tutor by tutor code
-        List<Skill> skills = skillDao.findSkillsByTutorCode(form.getTutorCode()); // Ensure this method exists and works as intended
-        Set<Skill> skillsSet = new HashSet<>(skills); // Corrected variable name and ensured it matches the list retrieval
+        // Retrieve and associate selected skills
+        Set<Skill> skillsSet = new HashSet<>();
+        if (form.getSkills() != null) {
+            for (Integer skillId : form.getSkills()) {
+                Optional<Skill> optionalSkill = skillDao.findById(skillId);
+                if (optionalSkill.isPresent()) {
+                    skillsSet.add(optionalSkill.get());
+                }
+            }
+        }
         tutor.setSkills(skillsSet);
 
         return tutorDao.save(tutor);

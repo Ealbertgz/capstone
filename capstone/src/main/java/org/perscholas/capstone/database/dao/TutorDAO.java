@@ -9,7 +9,7 @@ import javax.persistence.EntityGraph;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public interface TutorDAO extends JpaRepository<Tutor, Long> {
+public interface TutorDAO extends JpaRepository<Tutor, Integer> {
 
     @Query("SELECT t FROM Tutor t WHERE t.tutorName LIKE %:name% OR t.tutorCode LIKE %:name%")
     List<Tutor> findByNameOrCode(@Param("name") String name);

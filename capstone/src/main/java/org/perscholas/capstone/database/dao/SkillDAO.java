@@ -6,11 +6,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.repository.query.*;
 
-import javax.persistence.EntityGraph;
+//import javax.persistence.EntityGraph;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public interface SkillDAO extends JpaRepository<Skill, Integer> {
+public interface SkillDAO extends JpaRepository<Skill, Long> {
 
     // Example method to search for skills based on the tutor_skills column
     // Note: This is a simplified example. You might need to adjust the query based on your actual database schema and relationships.

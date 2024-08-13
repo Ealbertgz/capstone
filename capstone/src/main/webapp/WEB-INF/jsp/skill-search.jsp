@@ -57,11 +57,11 @@
                             <td>${tutor.tutorCost}</td>
                             <td>
                                 <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>Skill</th>
-                                    </tr>
-                                    </thead>
+<%--                                    <thead>--%>
+<%--                                    <tr>--%>
+<%--                                        <th>Skill</th>--%>
+<%--                                    </tr>--%>
+<%--                                    </thead>--%>
                                     <tbody>
                                     <c:forEach items="${tutor.skills}" var="skill">
                                         <tr>

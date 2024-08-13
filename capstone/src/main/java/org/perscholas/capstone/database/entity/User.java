@@ -7,10 +7,10 @@ import java.util.*;
 
 @Setter
 @Getter
-@Entity
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 @Table(name = "users")
 public class User {
 
@@ -19,13 +19,15 @@ public class User {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true, nullable = false)
     private String email;
 
-    @Column(name = "password")
+    @Column(name = "password", unique = true, nullable = false)
     private String password;
 
-
+//    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "user_id")
+//    private Set<UserRole> roles;
 
 
 }

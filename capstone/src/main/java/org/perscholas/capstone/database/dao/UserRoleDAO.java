@@ -10,4 +10,5 @@ public interface UserRoleDAO extends JpaRepository<UserRole, Long> {
 
     List<UserRole> findByUserId(Integer userId);
 
+    List<UserRole> findAllByUserId(Integer userId);
 }

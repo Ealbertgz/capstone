@@ -29,16 +29,16 @@ public class TutorService {
         tutor.setTutorCost(form.getTutorCost());
 
         // Retrieve and associate selected skills
-        Set<Skill> skillsSet = new HashSet<>();
-        if (form.getSkills() != null) {
-            for (Integer skillId : form.getSkills()) {
-                Optional<Skill> optionalSkill = skillDao.findById(skillId);
-                if (optionalSkill.isPresent()) {
-                    skillsSet.add(optionalSkill.get());
-                }
-            }
-        }
-        tutor.setSkills(skillsSet);
+//        Set<Skill> skillsSet = new HashSet<>();
+//        if (form.getSkills() != null) {
+//            for (Integer skillId : form.getSkills()) {
+//                Optional<Skill> optionalSkill = skillDao.findById(skillId);
+//                if (optionalSkill.isPresent()) {
+//                    skillsSet.add(optionalSkill.get());
+//                }
+//            }
+//        }
+//        tutor.setSkills(skillsSet);
 
         return tutorDao.save(tutor);
     }

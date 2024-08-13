@@ -5,11 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import javax.persistence.EntityGraph;
+//import javax.persistence.EntityGraph;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public interface TutorDAO extends JpaRepository<Tutor, Integer> {
+public interface TutorDAO extends JpaRepository<Tutor, Long> {
 
     @Query("SELECT t FROM Tutor t WHERE t.tutorName LIKE %:name% OR t.tutorCode LIKE %:name%")
     List<Tutor> findByNameOrCode(@Param("name") String name);
